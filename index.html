@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern Bella Design — Kitchen and bath cabinetry</title>
+<meta name="description" content="Kitchen and bath cabinetry in nine door styles. Prices update live as you choose your finish. Installation available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#" data-go="home">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <rect x="5.5" y="5.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1"/>
+        <line x1="1" y1="13" x2="25" y2="13" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span class="brand-name" id="brandName">Modern Bella Design</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main">
+      <a href="#" data-go="home">Overview</a>
+      <a href="#" data-go="shop" data-room="kitchen">Kitchen</a>
+      <a href="#" data-go="shop" data-room="bath">Bath</a>
+      <a href="#" data-go="shop" data-group="storage">Storage</a>
+      <a href="#" data-go="services">Services</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="nav-finish" id="navFinish" aria-label="Change door style">
+        <span class="chip" id="navChip"></span>
+        <span id="navFinishName">Emerald White</span>
+      </button>
+      <button class="nav-cart" id="cartBtn" aria-label="Open cart">
+        Cart
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════ HOME ══════════════ -->
+  <section class="view" id="view-home">
+
+    <div class="hero" id="hero">
+      <div class="hero-stage" id="heroStage">
+        <img class="hero-img" id="heroImgA" alt="" width="1750" height="2280" fetchpriority="high" decoding="async">
+        <img class="hero-img" id="heroImgB" alt="" aria-hidden="true" width="1750" height="2280" decoding="async">
+      </div>
+      <div class="hero-scrim"></div>
+
+      <div class="hero-copy">
+        <p class="hero-series" id="heroSeries">Emerald series</p>
+        <h1 class="hero-name" id="heroName">White</h1>
+        <p class="hero-blurb" id="heroBlurb"></p>
+        <div class="hero-meta">
+          <span id="heroMaterial"></span>
+          <span class="hero-sep"></span>
+          <span id="heroPriceHint"></span>
+        </div>
+        <div class="hero-cta">
+          <button class="btn btn-solid" data-go="shop">Shop this finish</button>
+          <button class="btn btn-ghost" data-go="services">Add installation</button>
+        </div>
+      </div>
+
+      <div class="doorstrip" role="radiogroup" aria-label="Door style">
+        <div class="doorstrip-in" id="doorStrip"></div>
+      </div>
+    </div>
+
+    <section class="band">
+      <div class="wrap">
+        <h2 class="h2">Two door profiles. Nine finishes. One price list that follows your choice.</h2>
+        <p class="lede">Every cabinet in the catalogue is built to the same spec. What changes is the door
+          you put on the front of it — and that decision sets the price of all 202 cabinets at once.
+          Pick a finish and the whole store re-prices while you watch.</p>
+        <div class="series-pair" id="seriesPair"></div>
+      </div>
+    </section>
+
+    <section class="band band-tight">
+      <div class="wrap">
+        <div class="rooms" id="rooms"></div>
+      </div>
+    </section>
+
+    <section class="band band-ink">
+      <div class="wrap">
+        <h2 class="h2 h2-light">What is actually in the box</h2>
+        <div class="spec" id="specGrid"></div>
+        <p class="spec-foot">Every cabinet carries a limited lifetime warranty to the original owner, and every
+          part in it can be ordered on its own if something is ever damaged.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap install-teaser">
+        <div>
+          <h2 class="h2">You can stop at the boxes, or we can hang them.</h2>
+          <p class="lede">Add installation to any order and the estimate builds itself from what is in your
+            cart — counted by cabinet, not guessed at. A measure comes first and it is free; the number
+            only becomes final once someone has stood in the room.</p>
+          <button class="btn btn-solid" data-go="services">See how installation is priced</button>
+        </div>
+        <div class="install-fig" id="installFig"></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════════ SHOP ══════════════ -->
+  <section class="view" id="view-shop" hidden>
+
+    <div class="finishbar" id="finishBar">
+      <div class="finishbar-in">
+        <div class="fb-left">
+          <span class="fb-swatch" id="fbSwatch"></span>
+          <div>
+            <p class="fb-label">Pricing everything in</p>
+            <p class="fb-name" id="fbName">Emerald White</p>
+          </div>
+        </div>
+        <div class="fb-doors" id="fbDoors" role="radiogroup" aria-label="Door style"></div>
+      </div>
+    </div>
+
+    <div class="shop">
+      <aside class="rail" id="rail" aria-label="Filters">
+        <div class="rail-head">
+          <h2 class="rail-title">Catalogue</h2>
+          <button class="rail-clear" id="clearFilters">Clear</button>
+        </div>
+
+        <div class="rail-block">
+          <p class="rail-h">Type</p>
+          <div id="groupFilters" class="rail-list"></div>
+        </div>
+
+        <div class="rail-block">
+          <p class="rail-h">Width</p>
+          <div id="widthFilters" class="rail-chips"></div>
+        </div>
+
+        <div class="rail-block">
+          <p class="rail-h">Search</p>
+          <input class="rail-input" id="searchInput" type="search" placeholder="B24, sink base, pantry…"
+                 autocomplete="off" aria-label="Search the catalogue">
+        </div>
+
+        <div class="rail-block">
+          <p class="rail-h">Sort</p>
+          <select class="rail-input" id="sortSel" aria-label="Sort">
+            <option value="cat">Grouped by type</option>
+            <option value="asc">Price, low to high</option>
+            <option value="desc">Price, high to low</option>
+            <option value="w">Width</option>
+          </select>
+        </div>
+      </aside>
+
+      <div class="results">
+        <div class="results-head">
+          <p id="resultCount">—</p>
+          <button class="rail-toggle" id="railToggle">Filters</button>
+        </div>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>Nothing matches that. Try clearing the width filter or searching a
+          cabinet code like <button class="linkish" data-search="B24">B24</button>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SERVICES ══════════════ -->
+  <section class="view" id="view-services" hidden>
+    <div class="wrap svc">
+      <h1 class="h1">Services</h1>
+      <p class="lede lede-wide">We are a general contractor based in Beltsville, Maryland. We build and
+        fit the cabinetry in this catalogue, and we take on the rest of the room — or the rest of the
+        house — when that is what the job needs.</p>
+
+      <div class="svcs" id="services"></div>
+
+      <h2 class="h2 svc-h">Cabinet installation</h2>
+      <p class="lede lede-wide">We can deliver the cabinets and leave, or we can set them, scribe them,
+        hang the doors and adjust every hinge before we go. Installation is priced per cabinet by type,
+        because a 96&Prime; pantry is not the same job as a 12&Prime; filler.</p>
+
+      <div class="rates" id="rates"></div>
+
+      <div class="svc-cols">
+        <div>
+          <h2 class="h3">How the estimate works</h2>
+          <ol class="steps">
+            <li><b>Build your cart.</b> The running install estimate updates with every cabinet you add.</li>
+            <li><b>Book a free measure.</b> Someone comes out, checks the walls for plumb and the floor for
+              level, and confirms what actually fits.</li>
+            <li><b>The estimate becomes a quote.</b> Anything the measure turns up — a soffit, a gas line in
+              the wrong place, a floor that runs out an inch — gets priced then, not later.</li>
+            <li><b>We install.</b> A typical kitchen of twenty to thirty cabinets takes two to three days.</li>
+          </ol>
+        </div>
+        <div>
+          <h2 class="h3">What is included</h2>
+          <ul class="ticks">
+            <li>Setting and levelling every cabinet, shimmed to the high point of the floor</li>
+            <li>Scribing fillers and end panels to out-of-plumb walls</li>
+            <li>Hanging doors and adjusting all six-way hinges</li>
+            <li>Fitting drawer boxes and setting soft-close travel</li>
+            <li>Cutting and mitring light rail, crown and toe kick</li>
+            <li>Cut-outs for sinks, cooktops and outlets in cabinet backs</li>
+            <li>Haul-away of all packaging</li>
+          </ul>
+          <h2 class="h3">What is not</h2>
+          <ul class="ticks ticks-neg">
+            <li>Plumbing and electrical connections</li>
+            <li>Flooring, drywall repair and painting</li>
+            <li>Permits, and any structural or soffit work</li>
+          </ul>
+          <p class="svc-aside">Countertops and stone are not part of the per-cabinet installation price,
+            but they are not somebody else's problem either — we template, fabricate and fit them as
+            their own line, quoted separately.</p>
+        </div>
+      </div>
+
+      <h2 class="h2 svc-h">Modifications</h2>
+      <p class="lede">If a stock size does not work, the cabinet can be altered in the shop before it ships.
+        These are priced per cabinet and added to your order like anything else.</p>
+      <div class="mods" id="mods"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-brand" id="brandNameFoot">Modern Bella Design LLC</p>
+      <p class="foot-note">Kitchen and bath cabinetry, built from 5⁄8&Prime; grade-A plywood and solid wood,
+        finished in nine door styles.</p>
+      <!-- Kept in sync from BRAND.serviceArea at boot; written out here so it is
+           in the HTML for local search rather than only after scripts run. -->
+      <p class="foot-area" id="brandArea">Beltsville, MD — serving Columbia, Silver Spring, Bethesda,
+        Bowie, North Bethesda, College Park, Laurel, South Laurel, Fairland, Greenbelt, Hyattsville,
+        Langley Park, Beltsville, Maryland City, Calverton, Takoma Park, Adelphi, Cloverly, White Oak,
+        Colesville, New Carrollton, Fort Meade, Burtonsville, North Kensington, South Kensington,
+        Four Corners, Goddard, Hillandale, West Laurel, Berwyn Heights, Spencerville and
+        Washington DC.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <p class="foot-h">Shop</p>
+        <a href="#" data-go="shop" data-group="base">Base cabinets</a>
+        <a href="#" data-go="shop" data-group="wall">Wall cabinets</a>
+        <a href="#" data-go="shop" data-group="tall">Tall &amp; pantry</a>
+        <a href="#" data-go="shop" data-group="vanity">Vanity</a>
+        <a href="#" data-go="shop" data-group="storage">Inside storage</a>
+      </div>
+      <div>
+        <p class="foot-h">Services</p>
+        <a href="#" data-go="services">Kitchen &amp; bath remodeling</a>
+        <a href="#" data-go="services">Countertops &amp; stone</a>
+        <a href="#" data-go="services">General contracting</a>
+        <a href="#" data-go="services">Cabinet installation</a>
+        <a href="#" data-go="services">Modifications</a>
+        <a href="#" data-go="home">Care &amp; warranty</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-fine">
+    <p>Prices are list and shown per door series. Installation figures are estimates until a site measure
+       is complete.</p>
+  </div>
+</footer>
+
+<!-- product detail -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-back" data-close-sheet></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="sheet-x" data-close-sheet aria-label="Close">&times;</button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+
+<!-- cart -->
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-back" data-close-cart></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <header class="drawer-head">
+      <h2 id="cartTitle">Your order</h2>
+      <button class="sheet-x" data-close-cart aria-label="Close cart">&times;</button>
+    </header>
+    <div class="drawer-body" id="cartBody"></div>
+    <footer class="drawer-foot" id="cartFoot"></footer>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

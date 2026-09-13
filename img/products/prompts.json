@@ -1,0 +1,443 @@
+[
+  {
+    "file": "img/products/emerald-blue-base-double.webp",
+    "finish": "emerald-blue",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Generate a photorealistic ecommerce cabinet product image: one standalone 24-inch-wide base kitchen cabinet, one shallow full-width drawer above two equal shaker doors, recessed toe kick, no countertop, no handles. Emerald Blue finish, muted deep slate navy painted wood, approximate #4d6276. Soft neutral studio light, clean white background, subtle contact shadow. Three-quarter front view with right side slightly visible, entire cabinet centered with generous white margins, square image. Accurate simple shaker geometry, no text, dimensions, props, logos or watermark. This will be used as a generated finish visualization in a cabinetry store. Save the generated image and return its local file path.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-base-double.webp",
+    "finish": "emerald-white",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-base-single.webp",
+    "finish": "emerald-white",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-drawer.webp",
+    "finish": "emerald-white",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-wall-single.webp",
+    "finish": "emerald-white",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-wall-double.webp",
+    "finish": "emerald-white",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-pantry.webp",
+    "finish": "emerald-white",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-white-vanity.webp",
+    "finish": "emerald-white",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald White: crisp cool white painted finish, no yellow, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-base-double.webp",
+    "finish": "emerald-dove",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-base-single.webp",
+    "finish": "emerald-dove",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-drawer.webp",
+    "finish": "emerald-dove",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-wall-single.webp",
+    "finish": "emerald-dove",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-wall-double.webp",
+    "finish": "emerald-dove",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-pantry.webp",
+    "finish": "emerald-dove",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-dove-vanity.webp",
+    "finish": "emerald-dove",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Dove: warm off-white ivory painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-base-double.webp",
+    "finish": "emerald-gray",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-base-single.webp",
+    "finish": "emerald-gray",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-drawer.webp",
+    "finish": "emerald-gray",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-wall-single.webp",
+    "finish": "emerald-gray",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-wall-double.webp",
+    "finish": "emerald-gray",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-pantry.webp",
+    "finish": "emerald-gray",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-gray-vanity.webp",
+    "finish": "emerald-gray",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Gray: light neutral gray painted finish, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-base-single.webp",
+    "finish": "emerald-blue",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-drawer.webp",
+    "finish": "emerald-blue",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-wall-single.webp",
+    "finish": "emerald-blue",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-wall-double.webp",
+    "finish": "emerald-blue",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-pantry.webp",
+    "finish": "emerald-blue",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-blue-vanity.webp",
+    "finish": "emerald-blue",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Blue: muted deep slate navy painted finish, approximately #4d6276, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-base-double.webp",
+    "finish": "emerald-stone",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-base-single.webp",
+    "finish": "emerald-stone",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-drawer.webp",
+    "finish": "emerald-stone",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-wall-single.webp",
+    "finish": "emerald-stone",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-wall-double.webp",
+    "finish": "emerald-stone",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-pantry.webp",
+    "finish": "emerald-stone",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-stone-vanity.webp",
+    "finish": "emerald-stone",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Stone: medium gray stained solid wood with visible open wood grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-base-double.webp",
+    "finish": "emerald-natural",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-base-single.webp",
+    "finish": "emerald-natural",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-drawer.webp",
+    "finish": "emerald-natural",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-wall-single.webp",
+    "finish": "emerald-natural",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-wall-double.webp",
+    "finish": "emerald-natural",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-pantry.webp",
+    "finish": "emerald-natural",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-natural-vanity.webp",
+    "finish": "emerald-natural",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Natural: warm honey golden oak stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-base-double.webp",
+    "finish": "emerald-pebble",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-base-single.webp",
+    "finish": "emerald-pebble",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-drawer.webp",
+    "finish": "emerald-pebble",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-wall-single.webp",
+    "finish": "emerald-pebble",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-wall-double.webp",
+    "finish": "emerald-pebble",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-pantry.webp",
+    "finish": "emerald-pebble",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/emerald-pebble-vanity.webp",
+    "finish": "emerald-pebble",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Emerald Pebble: deep near-charcoal gray stained solid wood with visible grain, simple shaker rails. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-base-double.webp",
+    "finish": "trillion-white",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-base-single.webp",
+    "finish": "trillion-white",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-drawer.webp",
+    "finish": "trillion-white",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-wall-single.webp",
+    "finish": "trillion-white",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-wall-double.webp",
+    "finish": "trillion-white",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-pantry.webp",
+    "finish": "trillion-white",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-white-vanity.webp",
+    "finish": "trillion-white",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Trillion White: crisp white painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-base-double.webp",
+    "finish": "trillion-gray",
+    "shape": "base-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet, one shallow full width drawer above two equal doors, recessed toe kick, open top, no countertop. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-base-single.webp",
+    "finish": "trillion-gray",
+    "shape": "base-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide base cabinet, one shallow drawer above one tall door, recessed toe kick, open top, no countertop. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-drawer.webp",
+    "finish": "trillion-gray",
+    "shape": "drawer",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide base cabinet with exactly three stacked full width drawers: shallow top drawer and two deeper drawers, recessed toe kick, open top, no countertop. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-wall-single.webp",
+    "finish": "trillion-gray",
+    "shape": "wall-single",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 15 inch wide 30 inch high wall cabinet, one tall door, no drawers, no toe kick, enclosed top. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-wall-double.webp",
+    "finish": "trillion-gray",
+    "shape": "wall-double",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide 30 inch high wall cabinet, two equal tall doors side by side, no drawers, no toe kick, enclosed top. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-pantry.webp",
+    "finish": "trillion-gray",
+    "shape": "pantry",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 24 inch wide 84 inch high tall pantry cabinet, two stacked door sections each with two doors, small upper section and tall lower section, recessed toe kick. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  },
+  {
+    "file": "img/products/trillion-gray-vanity.webp",
+    "finish": "trillion-gray",
+    "shape": "vanity",
+    "prompt": "Use case: product-mockup. Asset type: cabinetry ecommerce catalog visualization. Generate one photorealistic standalone 30 inch wide bathroom vanity sink base cabinet, one shallow false drawer front above two doors, recessed toe kick, open top for sink installation but no sink and no countertop. Finish: Trillion Gray: light neutral gray painted finish, slim rails and a deeper decorative beveled inner frame. All exposed exterior sides finished to match front. Neutral soft studio light, pure white background, delicate contact shadow. Three-quarter front view with right side slightly visible. Entire product centered with generous white margins, square composition. Clean precision joinery and realistic materials. No handles, no props, no room, no text, no dimensions, no logos, no watermark. The image is a representative cabinet configuration in this finish.",
+    "generator": "built-in image_gen"
+  }
+]
