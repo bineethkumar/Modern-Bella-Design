@@ -8,72 +8,125 @@ import { env } from "./env.server";
  *   db().prepare("SELECT ... WHERE id = ?").bind(id).first<Row>()
  *   db().batch([stmtA, stmtB])   // one transaction
  * `?` placeholders are rewritten to Postgres `$1, $2 ...`.
+ *
+ * Serverless connection handling. Vercel freezes the function between
+ * requests, and a socket left open across a freeze can be dead when the
+ * function wakes; a query written to it never gets an answer. So:
+ *  - a connection idle for more than a few seconds is replaced, not reused;
+ *  - a connection that fails is retired, but only closed once every query
+ *    still running on it has finished (other requests share it);
+ *  - every query has a time limit, and read-only queries retry once on a
+ *    fresh connection, so a stale socket costs a short delay, not an error.
  */
-let client: postgres.Sql | null = null;
+const UNAVAILABLE = "Our system is temporarily unavailable. Please try again in a moment.";
+const STALE_AFTER_MS = 4_000;
+const QUERY_TIMEOUT_MS = 8_000;
 
-function sql(): postgres.Sql {
-  if (client) return client;
+interface Conn {
+  sql: postgres.Sql;
+  inFlight: number;
+  lastUsed: number;
+  retired: boolean;
+}
+
+let current: Conn | null = null;
+
+function makeClient(): postgres.Sql {
   const url = env().DATABASE_URL;
   if (!url) {
     console.error("DATABASE_URL is not set.");
-    throw new Error("Our system is temporarily unavailable. Please try again in a moment.");
+    throw new Error(UNAVAILABLE);
   }
   if (/@db\.[a-z0-9]+\.supabase\.co/.test(url)) {
     // Supabase's direct host is IPv6-only and unreachable from Vercel.
     console.error("DATABASE_URL uses Supabase's direct connection. Use the Transaction pooler string (port 6543).");
   }
   const local = /@(localhost|127\.0\.0\.1)[:/]/.test(url);
-  client = postgres(url, {
+  return postgres(url, {
     // Supabase's transaction pooler does not support prepared statements.
     prepare: false,
     ssl: local ? false : "require",
-    // Serverless-friendly: Vercel freezes the function between requests, so
-    // keep one short-lived connection instead of a pool of long-lived ones
-    // that can go stale while frozen.
-    max: 1,
-    idle_timeout: 5,
-    max_lifetime: 60,
-    connect_timeout: 10,
+    max: 3,
+    idle_timeout: 10,
+    max_lifetime: 300,
+    connect_timeout: 8,
     // Skip the extra type-discovery round trip on every new connection.
     fetch_types: false,
   });
-  return client;
 }
 
-type Param = string | number | boolean | null;
-
-const QUERY_TIMEOUT_MS = 12_000;
-
-/** Drops the shared client so the next query opens a fresh connection. */
-function resetClient() {
-  const old = client;
-  client = null;
-  old?.end({ timeout: 1 }).catch(() => {});
+function closeIfIdle(conn: Conn) {
+  if (conn.retired && conn.inFlight === 0) conn.sql.end({ timeout: 1 }).catch(() => {});
 }
 
-/**
- * Database failures are logged in full on the server, but visitors only ever
- * see a generic message (the raw error can reveal hostnames or SQL). Every
- * query has a hard time limit, so a dead connection becomes an error instead
- * of a request that never finishes.
- */
-async function guarded<T>(work: () => Promise<T>): Promise<T> {
+function retire(conn: Conn) {
+  conn.retired = true;
+  if (current === conn) current = null;
+  closeIfIdle(conn);
+}
+
+function acquire(): Conn {
+  const now = Date.now();
+  if (current && current.inFlight === 0 && now - current.lastUsed > STALE_AFTER_MS) retire(current);
+  if (!current) current = { sql: makeClient(), inFlight: 0, lastUsed: now, retired: false };
+  current.inFlight++;
+  current.lastUsed = now;
+  return current;
+}
+
+function release(conn: Conn) {
+  conn.inFlight--;
+  conn.lastUsed = Date.now();
+  closeIfIdle(conn);
+}
+
+async function attempt<T>(work: (sql: postgres.Sql) => Promise<T>): Promise<T> {
+  const conn = acquire();
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
     return await Promise.race([
-      work(),
+      work(conn.sql),
       new Promise<never>((_, reject) => {
         timer = setTimeout(() => reject(new Error(`Query timed out after ${QUERY_TIMEOUT_MS}ms`)), QUERY_TIMEOUT_MS);
       }),
     ]);
   } catch (error) {
-    console.error("Database error:", error);
-    resetClient();
-    throw new Error("Our system is temporarily unavailable. Please try again in a moment.");
+    // Only retire on connection-level trouble; a SQL error leaves it healthy.
+    const code = (error as { code?: string }).code ?? "";
+    const sqlError = /^[0-9A-Z]{5}$/.test(code) && !code.startsWith("08");
+    if (!sqlError) retire(conn);
+    throw error;
   } finally {
     if (timer) clearTimeout(timer);
+    release(conn);
   }
 }
+
+/**
+ * Runs a database call with the time limit, a single retry for read-only
+ * work, and full logging. Visitors only ever see a generic message.
+ */
+async function guarded<T>(work: (sql: postgres.Sql) => Promise<T>, readOnly: boolean): Promise<T> {
+  try {
+    return await attempt(work);
+  } catch (first) {
+    if (readOnly) {
+      console.warn("Database retry after:", (first as Error).message);
+      try {
+        return await attempt(work);
+      } catch (second) {
+        console.error("Database error:", second);
+        throw new Error(UNAVAILABLE);
+      }
+    }
+    console.error("Database error:", first);
+    throw new Error(UNAVAILABLE);
+  }
+}
+
+type Param = string | number | boolean | null;
+
+const isReadOnly = (text: string) => /^\s*(select|with)\b/i.test(text);
 
 function toPg(text: string): string {
   let i = 0;
@@ -91,7 +144,7 @@ export class Statement {
   }
 
   async all<T>(): Promise<{ results: T[] }> {
-    const rows = await guarded(() => sql().unsafe(toPg(this.text), this.params));
+    const rows = await guarded((sql) => sql.unsafe(toPg(this.text), this.params), isReadOnly(this.text));
     return { results: rows as unknown as T[] };
   }
 
@@ -101,7 +154,7 @@ export class Statement {
   }
 
   async run(): Promise<{ meta: { changes: number } }> {
-    const res = await guarded(() => sql().unsafe(toPg(this.text), this.params));
+    const res = await guarded((sql) => sql.unsafe(toPg(this.text), this.params), isReadOnly(this.text));
     return { meta: { changes: res.count } };
   }
 }
@@ -114,10 +167,12 @@ export interface Database {
 const database: Database = {
   prepare: (text) => new Statement(text),
   async batch(statements) {
-    await guarded(() =>
-      sql().begin(async (tx) => {
-        for (const s of statements) await tx.unsafe(toPg(s.text), s.params);
-      }),
+    await guarded(
+      (sql) =>
+        sql.begin(async (tx) => {
+          for (const s of statements) await tx.unsafe(toPg(s.text), s.params);
+        }),
+      false,
     );
   },
 };
@@ -161,7 +216,8 @@ export function requestOrigin(): string {
 }
 
 export function clientIp(): string {
-  return getRequestHeader("cf-connecting-ip") ?? getRequestHeader("x-forwarded-for") ?? "unknown";
+  const fwd = getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim();
+  return getRequestHeader("x-real-ip") ?? fwd ?? getRequestHeader("cf-connecting-ip") ?? "unknown";
 }
 
 /** Order numbers read well on the phone: MB-260614-4831. */
