@@ -28,7 +28,7 @@ The schema turns on Row Level Security with no policies, so Supabase's public RE
 ## Deploy to Vercel and your domain
 
 1. vercel.com > **Add New > Project** > import `bineethkumar/Modern-Bella-Design`. The defaults are right (Framework: Other or TanStack Start, build `npm run build`).
-2. **Settings > Environment Variables**: add everything from `.env.example` (`VITE_SITE_URL`, `DATABASE_URL`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, plus Square when ready). Redeploy after changing them.
+2. **Settings > Environment Variables**: add everything from `.env.example` (`VITE_SITE_URL`, `DATABASE_URL`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, plus Stripe or Square when ready). Redeploy after changing them.
 3. **Settings > Domains** > add your domain, then create the DNS records Vercel shows at your registrar (an `A` record for the apex, a `CNAME` for `www`). HTTPS is automatic.
 
 Every push to `master` deploys automatically.
@@ -46,6 +46,15 @@ Every push to `master` deploys automatically.
 | Studio portal | `/manage` | Dashboard, orders and tracking updates, invoices and payments, consultation requests |
 
 ## Payments
+
+**Stripe (recommended):**
+1. Stripe Dashboard > Developers > API keys: copy the secret key into `STRIPE_SECRET_KEY` (`sk_test_...` while testing, `sk_live_...` to go live).
+2. Developers > Webhooks > Add endpoint: `https://<your-domain>/api/webhooks/stripe`, events `checkout.session.completed` and `checkout.session.async_payment_succeeded`. Copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
+3. Redeploy. Checkout, the order page and invoices now open Stripe Checkout; the webhook marks orders and invoices paid.
+
+Test locally with the Stripe CLI: `stripe listen --forward-to localhost:3000/api/webhooks/stripe` (use the `whsec_...` it prints as `STRIPE_WEBHOOK_SECRET` in `.env`) and the test card `4242 4242 4242 4242`.
+
+If both Stripe and Square keys are set, Stripe wins unless `PAYMENT_PROVIDER=square`.
 
 **Square:** set `SQUARE_ACCESS_TOKEN`, `SQUARE_LOCATION_ID`, `SQUARE_ENV` (`sandbox` or `production`), and create a webhook for `payment.updated` pointing to `https://<your-domain>/api/webhooks/square`; put its signature key in `SQUARE_WEBHOOK_SIGNATURE_KEY`. Checkout and invoices switch to Square's hosted payment page automatically. Card numbers never touch this site.
 

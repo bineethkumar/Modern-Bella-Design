@@ -108,9 +108,6 @@ function InvoiceAdmin() {
           {inv.status === "draft" ? (
             <button type="button" className="cta-quiet" data-variant="ink" disabled={busy} onClick={() => act("send", "Marked as sent. Share the customer link below.")}>Mark as sent</button>
           ) : null}
-          {!locked && balance > 0 ? (
-            <button type="button" className="cta-quiet" disabled={busy} onClick={() => act("payment_link", "Card payment link ready.")}>Create card payment link</button>
-          ) : null}
           <button type="button" className="cta-quiet" onClick={() => window.print()}><Printer size={14} /> Print / PDF</button>
           {inv.status === "void" ? (
             <button type="button" className="cta-quiet" disabled={busy} onClick={() => act("reopen", "Reopened as a draft.")}>Reopen</button>
@@ -128,7 +125,7 @@ function InvoiceAdmin() {
           {inv.status !== "draft" ? (
             <section className="mb-panel">
               <h3>Customer link</h3>
-              <p className="mb-note" style={{ marginTop: 0 }}>Send this link by email or text. The customer can view, print and pay the invoice there.</p>
+              <p className="mb-note" style={{ marginTop: 0 }}>Send this link by email or text. The customer can view, print and pay the invoice by card there; each visit opens a fresh secure checkout.</p>
               <div style={{ display: "flex", gap: "0.5rem" }}>
                 <input className="mb-input" readOnly value={publicUrl} onFocus={(e) => e.currentTarget.select()} style={{ fontSize: "0.82rem" }} />
                 <button type="button" className="cta-quiet" aria-label="Copy link" onClick={() => navigator.clipboard?.writeText(publicUrl).then(() => setMsg({ ok: true, text: "Link copied." }))}>
@@ -136,9 +133,7 @@ function InvoiceAdmin() {
                 </button>
               </div>
               <p style={{ marginBottom: 0 }}><a href={publicUrl} target="_blank" rel="noreferrer" className="cta-quiet"><ExternalLink size={14} /> Open customer view</a></p>
-              {inv.payment_link_url ? (
-                <p className="mb-note" style={{ marginBottom: 0 }}>Direct card checkout: <a href={inv.payment_link_url} target="_blank" rel="noreferrer">open payment link</a></p>
-              ) : null}
+
             </section>
           ) : (
             <section className="mb-panel">

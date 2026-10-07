@@ -23,6 +23,7 @@ import { Route as ManageIndexRouteImport } from './routes/manage.index'
 import { Route as ManageLeadsRouteImport } from './routes/manage.leads'
 import { Route as OrderNumberRouteImport } from './routes/order.$number'
 import { Route as ApiWebhooksSquareRouteImport } from './routes/api.webhooks.square'
+import { Route as ApiWebhooksStripeRouteImport } from './routes/api.webhooks.stripe'
 import { Route as ManageInvoicesIndexRouteImport } from './routes/manage.invoices.index'
 import { Route as ManageInvoicesIdRouteImport } from './routes/manage.invoices.$id'
 import { Route as ManageInvoicesNewRouteImport } from './routes/manage.invoices.new'
@@ -99,6 +100,11 @@ const ApiWebhooksSquareRoute = ApiWebhooksSquareRouteImport.update({
   path: '/api/webhooks/square',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWebhooksStripeRoute = ApiWebhooksStripeRouteImport.update({
+  id: '/api/webhooks/stripe',
+  path: '/api/webhooks/stripe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManageInvoicesIndexRoute = ManageInvoicesIndexRouteImport.update({
   id: '/invoices/',
   path: '/invoices/',
@@ -140,6 +146,7 @@ export interface FileRoutesByFullPath {
   '/order/$number': typeof OrderNumberRoute
   '/manage/': typeof ManageIndexRoute
   '/api/webhooks/square': typeof ApiWebhooksSquareRoute
+  '/api/webhooks/stripe': typeof ApiWebhooksStripeRoute
   '/manage/invoices/$id': typeof ManageInvoicesIdRoute
   '/manage/invoices/new': typeof ManageInvoicesNewRoute
   '/manage/orders/$number': typeof ManageOrdersNumberRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/order/$number': typeof OrderNumberRoute
   '/manage': typeof ManageIndexRoute
   '/api/webhooks/square': typeof ApiWebhooksSquareRoute
+  '/api/webhooks/stripe': typeof ApiWebhooksStripeRoute
   '/manage/invoices/$id': typeof ManageInvoicesIdRoute
   '/manage/invoices/new': typeof ManageInvoicesNewRoute
   '/manage/orders/$number': typeof ManageOrdersNumberRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/order/$number': typeof OrderNumberRoute
   '/manage/': typeof ManageIndexRoute
   '/api/webhooks/square': typeof ApiWebhooksSquareRoute
+  '/api/webhooks/stripe': typeof ApiWebhooksStripeRoute
   '/manage/invoices/$id': typeof ManageInvoicesIdRoute
   '/manage/invoices/new': typeof ManageInvoicesNewRoute
   '/manage/orders/$number': typeof ManageOrdersNumberRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/order/$number'
     | '/manage/'
     | '/api/webhooks/square'
+    | '/api/webhooks/stripe'
     | '/manage/invoices/$id'
     | '/manage/invoices/new'
     | '/manage/orders/$number'
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/order/$number'
     | '/manage'
     | '/api/webhooks/square'
+    | '/api/webhooks/stripe'
     | '/manage/invoices/$id'
     | '/manage/invoices/new'
     | '/manage/orders/$number'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/order/$number'
     | '/manage/'
     | '/api/webhooks/square'
+    | '/api/webhooks/stripe'
     | '/manage/invoices/$id'
     | '/manage/invoices/new'
     | '/manage/orders/$number'
@@ -266,6 +278,7 @@ export interface RootRouteChildren {
   InvoiceTokenRoute: typeof InvoiceTokenRoute
   OrderNumberRoute: typeof OrderNumberRoute
   ApiWebhooksSquareRoute: typeof ApiWebhooksSquareRoute
+  ApiWebhooksStripeRoute: typeof ApiWebhooksStripeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -368,6 +381,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiWebhooksSquareRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/webhooks/stripe': {
+      id: '/api/webhooks/stripe'
+      path: '/api/webhooks/stripe'
+      fullPath: '/api/webhooks/stripe'
+      preLoaderRoute: typeof ApiWebhooksStripeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manage/invoices/': {
       id: '/manage/invoices/'
       path: '/invoices'
@@ -442,6 +462,7 @@ const rootRouteChildren: RootRouteChildren = {
   InvoiceTokenRoute: InvoiceTokenRoute,
   OrderNumberRoute: OrderNumberRoute,
   ApiWebhooksSquareRoute: ApiWebhooksSquareRoute,
+  ApiWebhooksStripeRoute: ApiWebhooksStripeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

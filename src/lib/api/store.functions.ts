@@ -36,8 +36,7 @@ const checkoutSchema = z.object({
 
 /** What the checkout page needs to know before it renders the pay button. */
 export const getCheckoutInfo = createServerFn({ method: "GET" }).handler(async () => {
-  const mode = paymentMode();
-  return { mode, label: mode === "square" ? "Square" : mode === "toast" ? "Toast" : null };
+  return { mode: paymentMode(), label: paymentAdapter()?.label ?? null };
 });
 
 export const placeOrder = createServerFn({ method: "POST" })
@@ -94,6 +93,7 @@ export const placeOrder = createServerFn({ method: "POST" })
     if (q.haulCents) lines.push({ name: "Old cabinet removal", qty: 1, unitCents: q.haulCents });
     if (q.deliveryCents) lines.push({ name: "Delivery", qty: 1, unitCents: q.deliveryCents });
     if (q.taxCents) lines.push({ name: "Maryland sales tax", qty: 1, unitCents: q.taxCents });
+    const origin = requestOrigin();
 
     try {
       const session = await adapter.createCheckout({
@@ -101,7 +101,8 @@ export const placeOrder = createServerFn({ method: "POST" })
         reference: number,
         lines,
         email: c.email,
-        redirectUrl: `${requestOrigin()}${orderUrl}&paid=1`,
+        redirectUrl: `${origin}${orderUrl}&paid=1`,
+        cancelUrl: `${origin}${orderUrl}`,
       });
       await DB.prepare(
         "UPDATE orders SET payment_provider = ?, provider_order_id = ?, payment_link_url = ?, updated_at = ? WHERE id = ?",
@@ -154,7 +155,7 @@ export const getPublicOrder = createServerFn({ method: "GET" })
         .all<{ status: string | null; note: string | null; created_at: string }>(),
     ]);
     const { id: _id, ...rest } = order;
-    return { ...rest, items: items.results, events: events.results };
+    return { ...rest, items: items.results, events: events.results, canPayOnline: paymentMode() !== "manual" };
   });
 
 export const lookupOrder = createServerFn({ method: "POST" })
@@ -242,14 +243,46 @@ export const payInvoice = createServerFn({ method: "POST" })
     if (!adapter) throw new Error("Online card payment is not enabled yet. Please contact us to pay.");
 
     const session = await adapter.createCheckout({
-      idempotencyKey: `${inv.id}-${balance}`,
+      idempotencyKey: `${inv.id}-${balance}-${Math.floor(Date.now() / 3_600_000)}`,
       reference: inv.number,
       lines: [{ name: `Invoice ${inv.number}`, qty: 1, unitCents: balance }],
       email: inv.email,
       redirectUrl: `${requestOrigin()}/invoice/${data.token}?paid=1`,
+      cancelUrl: `${requestOrigin()}/invoice/${data.token}`,
     });
     await DB.prepare(
       "UPDATE invoices SET payment_provider = ?, provider_order_id = ?, payment_link_url = ?, updated_at = ? WHERE id = ?",
     ).bind(adapter.mode, session.providerOrderId, session.url, nowIso(), inv.id).run();
+    return { url: session.url };
+  });
+
+/** Starts a fresh hosted checkout for an order's remaining balance. */
+export const payOrder = createServerFn({ method: "POST" })
+  .validator(z.object({ number: z.string().max(40), token: z.string().max(80) }))
+  .handler(async ({ data }) => {
+    const DB = db();
+    const o = await DB.prepare(
+      "SELECT id, number, email, status, total_cents, amount_paid_cents FROM orders WHERE number = ? AND public_token = ?",
+    ).bind(data.number, data.token).first<{
+      id: string; number: string; email: string; status: string; total_cents: number; amount_paid_cents: number;
+    }>();
+    if (!o || o.status === "cancelled") throw new Error("This order is not available.");
+    const balance = o.total_cents - o.amount_paid_cents;
+    if (balance <= 0) throw new Error("This order is already paid.");
+    const adapter = paymentAdapter();
+    if (!adapter) throw new Error("Online card payment is not enabled yet. We will send you an invoice.");
+
+    const orderUrl = `${requestOrigin()}/order/${o.number}?t=${data.token}`;
+    const session = await adapter.createCheckout({
+      idempotencyKey: `${o.id}-${balance}-${Math.floor(Date.now() / 3_600_000)}`,
+      reference: o.number,
+      lines: [{ name: `Order ${o.number}`, qty: 1, unitCents: balance }],
+      email: o.email,
+      redirectUrl: `${orderUrl}&paid=1`,
+      cancelUrl: orderUrl,
+    });
+    await DB.prepare(
+      "UPDATE orders SET payment_provider = ?, provider_order_id = ?, payment_link_url = ?, updated_at = ? WHERE id = ?",
+    ).bind(adapter.mode, session.providerOrderId, session.url, nowIso(), o.id).run();
     return { url: session.url };
   });

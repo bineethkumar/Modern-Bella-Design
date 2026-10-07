@@ -9,9 +9,11 @@ export interface AppEnv {
   // Management login.
   ADMIN_EMAIL?: string;
   ADMIN_PASSWORD?: string;
-  // Payments: "square", "toast" or "manual". Unset means Square when its keys
-  // are present, otherwise manual (orders are placed and invoiced later).
+  // Payments: "stripe", "square", "toast" or "manual". Unset means the first
+  // processor with keys (Stripe, then Square), otherwise manual invoicing.
   PAYMENT_PROVIDER?: string;
+  STRIPE_SECRET_KEY?: string;
+  STRIPE_WEBHOOK_SECRET?: string;
   SQUARE_ACCESS_TOKEN?: string;
   SQUARE_LOCATION_ID?: string;
   SQUARE_ENV?: string; // "sandbox" (default) or "production"

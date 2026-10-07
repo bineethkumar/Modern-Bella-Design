@@ -1,9 +1,9 @@
 /**
  * The payment seam. Checkout and invoices only ever talk to this interface,
- * so switching between Square and Toast (or adding another processor) means
- * writing one adapter, not touching the store.
+ * so switching between Stripe, Square and Toast (or adding another processor)
+ * means writing one adapter, not touching the store.
  */
-export type PaymentMode = "square" | "toast" | "manual";
+export type PaymentMode = "stripe" | "square" | "toast" | "manual";
 
 export interface CheckoutLine {
   name: string;
@@ -20,11 +20,13 @@ export interface CheckoutRequest {
   email?: string | null;
   /** Where the processor sends the customer after paying. */
   redirectUrl: string;
+  /** Where the customer lands if they back out (defaults to redirectUrl). */
+  cancelUrl?: string;
 }
 
 export interface CheckoutSession {
   url: string;
-  /** The processor's id for this order, used to match the payment webhook. */
+  /** The processor's id for this checkout, used to match the payment webhook. */
   providerOrderId: string;
 }
 

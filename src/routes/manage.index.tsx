@@ -26,7 +26,7 @@ function Dashboard() {
 
       {d.paymentMode === "manual" ? (
         <div className="mb-banner">
-          Online card payment is off, so orders are placed without payment and you invoice afterwards. Add your Square keys in the website settings to switch on card checkout.
+          Online card payment is off, so orders are placed without payment and you invoice afterwards. Add your Stripe (or Square) keys to the environment variables to switch on card checkout.
         </div>
       ) : null}
 

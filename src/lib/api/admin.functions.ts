@@ -365,7 +365,7 @@ export const invoiceAction = createServerFn({ method: "POST" })
       await DB.prepare("UPDATE invoices SET status = 'draft', updated_at = ? WHERE id = ?").bind(now, inv.id).run();
     } else {
       const adapter = paymentAdapter();
-      if (!adapter) throw new Error("Connect Square (or Toast) in the website settings to create card payment links.");
+      if (!adapter) throw new Error("Add your Stripe or Square keys in the environment settings to create card payment links.");
       const balance = inv.total_cents - inv.amount_paid_cents;
       if (balance <= 0) throw new Error("Nothing left to pay on this invoice.");
       const session = await adapter.createCheckout({

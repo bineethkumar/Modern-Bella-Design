@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
+import { useState } from "react";
 
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { getPublicOrder } from "@/lib/api/store.functions";
+import { getPublicOrder, payOrder } from "@/lib/api/store.functions";
 import { money } from "@/lib/catalog";
 import { CANCELLED, ORDER_STATUSES, PAYMENT_STATUS_LABEL, orderStatusIndex, orderStatusLabel } from "@/lib/statuses";
 
@@ -131,15 +132,43 @@ function OrderPage() {
                 {PAYMENT_STATUS_LABEL[order.payment_status] ?? order.payment_status}
               </span>
             </div>
-            {balance > 0 && order.payment_link_url && order.payment_status !== "paid" ? (
-              <a href={order.payment_link_url} className="cta-place" style={{ textAlign: "center", textDecoration: "none", boxSizing: "border-box", display: "block" }}>
-                Pay {money(balance, { cents: true })} securely
-              </a>
+            {balance > 0 && order.canPayOnline && order.status !== CANCELLED.id ? (
+              <PayButton number={order.number} balance={balance} />
             ) : null}
           </aside>
         </div>
       </main>
       <SiteFooter />
+    </>
+  );
+}
+
+function PayButton({ number, balance }: { number: string; balance: number }) {
+  const { t } = Route.useSearch();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  return (
+    <>
+      <button
+        type="button"
+        className="cta-place"
+        disabled={busy}
+        data-busy={busy ? "true" : "false"}
+        onClick={async () => {
+          setBusy(true);
+          setError(null);
+          try {
+            const res = await payOrder({ data: { number, token: t ?? "" } });
+            window.location.assign(res.url);
+          } catch (err) {
+            setError(err instanceof Error ? err.message : "Payment could not start.");
+            setBusy(false);
+          }
+        }}
+      >
+        {busy ? "Opening secure checkout" : `Pay ${money(balance, { cents: true })} securely`}
+      </button>
+      {error ? <p className="mb-error" role="alert">{error}</p> : null}
     </>
   );
 }
