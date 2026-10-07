@@ -37,8 +37,8 @@ const TILES: { group: GroupId; cls: string; name: string; blurb: string; img: st
   { group: "tall", cls: "mb-tile--c", name: "Tall & pantry", blurb: "Pantries and oven towers.", img: "/catalog/products/emerald-gray-pantry.webp" },
   { group: "vanity", cls: "mb-tile--d", name: "Vanity", blurb: "Sink bases and drawer stacks for the bath.", img: "/catalog/products/emerald-blue-vanity.webp" },
   { group: "storage", cls: "mb-tile--e", name: "Inside storage", blurb: "Roll-outs, wine and organisers.", img: "/catalog/products/emerald-natural-drawer.webp" },
-  { group: "trim", cls: "mb-tile--f", name: "Trim & panels", blurb: "Moulding, fillers, panels and glass doors to finish the run.", img: "/catalog/products/emerald-pebble-wall-single.webp" },
-  { group: "mods", cls: "mb-tile--g", name: "Modifications", blurb: "Depth cuts, glass prep and shop work, priced per piece.", img: "/catalog/products/emerald-stone-base-single.webp" },
+  { group: "trim", cls: "mb-tile--f", name: "Trim & panels", blurb: "Moulding, fillers, panels and glass doors to finish the run.", img: "/catalog/door-emerald-white.webp" },
+  { group: "mods", cls: "mb-tile--g", name: "Modifications", blurb: "Depth cuts, glass prep and shop work, priced per piece.", img: "/catalog/door-emerald-natural.webp" },
 ];
 
 const STEPS = [

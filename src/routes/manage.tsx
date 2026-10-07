@@ -19,7 +19,7 @@ function Portal() {
   return (
     <div className="mb-portal">
       <aside className="mb-side">
-        <Link to="/manage"><img src="/assets/brand/logo-light@sm.png" alt="Modern Bella Design" width={804} height={249} /></Link>
+        <Link to="/manage"><img src="/assets/brand/logo-light@sm.png" alt="Modern Bella Design" width={800} height={247} /></Link>
         <nav aria-label="Portal">
           <Link to="/manage" activeOptions={{ exact: true }}>Dashboard</Link>
           <Link to="/manage/orders">Orders &amp; tracking</Link>

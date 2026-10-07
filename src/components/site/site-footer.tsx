@@ -14,7 +14,7 @@ export function SiteFooter() {
       <div className="mb-wrap">
         <div className="mb-footer__grid">
           <div>
-            <img className="mb-footer__logo" src="/assets/brand/logo-light@sm.png" alt="Modern Bella Design" width={804} height={249} />
+            <img className="mb-footer__logo" src="/assets/brand/logo-light@sm.png" alt="Modern Bella Design" width={800} height={247} />
             <p className="mb-footer__area">
               {BRAND.city}. Serving {proseList(BRAND.serviceArea)}.
             </p>

@@ -36,7 +36,7 @@ function StaffLogin() {
   return (
     <main className="mb-login">
       <form className="mb-login__card" onSubmit={onSubmit}>
-        <img src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={804} height={249} />
+        <img src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={800} height={247} />
         <hr className="mb-rule" />
         <div>
           <p className="mb-eyebrow" style={{ marginBottom: "0.3rem" }}>Management</p>

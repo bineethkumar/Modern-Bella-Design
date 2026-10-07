@@ -31,8 +31,8 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     <header className="mb-header" data-tone={tone} data-overlay={overlay ? "true" : undefined}>
       <div className="mb-wrap mb-header__bar">
         <Link to="/" className="mb-logo" aria-label="Modern Bella Design, home">
-          <img className="mb-logo__ink" src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={804} height={249} />
-          <img className="mb-logo__light" src="/assets/brand/logo-light@sm.png" alt="" width={804} height={249} />
+          <img className="mb-logo__ink" src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={800} height={247} />
+          <img className="mb-logo__light" src="/assets/brand/logo-light@sm.png" alt="" width={800} height={247} />
         </Link>
         <nav className="mb-nav" data-open={open ? "true" : "false"} aria-label="Main">
           <Link to="/shop" onClick={() => setOpen(false)}>Shop</Link>

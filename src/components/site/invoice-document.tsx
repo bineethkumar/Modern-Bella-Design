@@ -38,7 +38,7 @@ export function InvoiceDocument({ inv }: { inv: InvoiceDoc }) {
   return (
     <article className="mb-doc">
       <header className="mb-doc__head">
-        <img src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={804} height={249} />
+        <img src="/assets/brand/logo-ink@sm.png" alt="Modern Bella Design" width={800} height={247} />
         <div className="mb-doc__meta">
           <strong>Invoice</strong>
           <span className="mb-num">{inv.number}</span>
