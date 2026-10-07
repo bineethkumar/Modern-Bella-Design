@@ -14,7 +14,14 @@ let client: postgres.Sql | null = null;
 function sql(): postgres.Sql {
   if (client) return client;
   const url = env().DATABASE_URL;
-  if (!url) throw new Error("The store database is not configured. Set DATABASE_URL.");
+  if (!url) {
+    console.error("DATABASE_URL is not set.");
+    throw new Error("Our system is temporarily unavailable. Please try again in a moment.");
+  }
+  if (/@db\.[a-z0-9]+\.supabase\.co/.test(url)) {
+    // Supabase's direct host is IPv6-only and unreachable from Vercel.
+    console.error("DATABASE_URL uses Supabase's direct connection. Use the Transaction pooler string (port 6543).");
+  }
   const local = /@(localhost|127\.0\.0\.1)[:/]/.test(url);
   client = postgres(url, {
     // Supabase's transaction pooler does not support prepared statements.
@@ -28,6 +35,19 @@ function sql(): postgres.Sql {
 }
 
 type Param = string | number | boolean | null;
+
+/**
+ * Database failures are logged in full on the server, but visitors only ever
+ * see a generic message (the raw error can reveal hostnames or SQL).
+ */
+async function guarded<T>(work: () => Promise<T>): Promise<T> {
+  try {
+    return await work();
+  } catch (error) {
+    console.error("Database error:", error);
+    throw new Error("Our system is temporarily unavailable. Please try again in a moment.");
+  }
+}
 
 function toPg(text: string): string {
   let i = 0;
@@ -45,7 +65,7 @@ export class Statement {
   }
 
   async all<T>(): Promise<{ results: T[] }> {
-    const rows = await sql().unsafe(toPg(this.text), this.params);
+    const rows = await guarded(() => sql().unsafe(toPg(this.text), this.params));
     return { results: rows as unknown as T[] };
   }
 
@@ -55,7 +75,7 @@ export class Statement {
   }
 
   async run(): Promise<{ meta: { changes: number } }> {
-    const res = await sql().unsafe(toPg(this.text), this.params);
+    const res = await guarded(() => sql().unsafe(toPg(this.text), this.params));
     return { meta: { changes: res.count } };
   }
 }
@@ -68,9 +88,11 @@ export interface Database {
 const database: Database = {
   prepare: (text) => new Statement(text),
   async batch(statements) {
-    await sql().begin(async (tx) => {
-      for (const s of statements) await tx.unsafe(toPg(s.text), s.params);
-    });
+    await guarded(() =>
+      sql().begin(async (tx) => {
+        for (const s of statements) await tx.unsafe(toPg(s.text), s.params);
+      }),
+    );
   },
 };
 
