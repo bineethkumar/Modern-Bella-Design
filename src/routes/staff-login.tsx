@@ -44,7 +44,7 @@ function StaffLogin() {
         </div>
         {!configured ? (
           <p className="mb-banner" style={{ margin: 0 }}>
-            Login is not set up yet. Add ADMIN_EMAIL and ADMIN_PASSWORD as secrets in the website settings, then redeploy.
+            Login is not set up yet. Add ADMIN_EMAIL and ADMIN_PASSWORD to your environment variables (the .env file locally, or Vercel: Settings, Environment Variables), then restart or redeploy.
           </p>
         ) : null}
         <label className="mb-field"><span>Email</span><input name="email" type="email" required autoComplete="username" /></label>

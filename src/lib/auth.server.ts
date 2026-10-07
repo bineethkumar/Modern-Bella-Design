@@ -1,6 +1,7 @@
 /**
  * Management login. The owner's credentials are secrets (ADMIN_EMAIL and
- * ADMIN_PASSWORD) set in the website settings; nothing is stored in code.
+ * ADMIN_PASSWORD) set as environment variables (.env locally, Vercel project
+ * settings in production); nothing is stored in code.
  * Sessions are random tokens in an HttpOnly cookie, kept hashed in the database.
  */
 import { deleteCookie, getCookie, setCookie } from "@tanstack/react-start/server";
@@ -42,7 +43,7 @@ export async function requireAdmin(): Promise<Admin> {
 export async function signIn(email: string, password: string): Promise<Admin> {
   const { ADMIN_EMAIL, ADMIN_PASSWORD } = bindings();
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
-    throw new Error("Management login is not set up yet. Add ADMIN_EMAIL and ADMIN_PASSWORD in the website settings.");
+    throw new Error("Management login is not set up yet. Add ADMIN_EMAIL and ADMIN_PASSWORD to the environment variables, then redeploy.");
   }
   const ip = clientIp();
   const since = Date.now() - WINDOW_MS;

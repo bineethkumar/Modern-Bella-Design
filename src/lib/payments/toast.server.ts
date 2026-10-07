@@ -5,7 +5,7 @@
  * checkout for a retail store is not part of Toast's public API, and access
  * to its partner APIs is granted per account. Once Toast gives you API access
  * for online payments, implement `createCheckout` below against the endpoint
- * they provide and set these secrets in the website settings:
+ * they provide and set these environment variables (.env locally, Vercel in production):
  *   PAYMENT_PROVIDER=toast, TOAST_CLIENT_ID, TOAST_CLIENT_SECRET, TOAST_RESTAURANT_GUID
  *
  * Until then the store falls back to "manual" mode automatically: orders are

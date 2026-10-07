@@ -2,7 +2,7 @@
  * Square: hosted checkout through the Payment Links API, confirmed by the
  * payment webhook at /api/webhooks/square.
  *
- * Setup (website settings, secrets):
+ * Setup (environment variables: .env locally, Vercel project settings in production):
  *   SQUARE_ACCESS_TOKEN            from the Square Developer dashboard
  *   SQUARE_LOCATION_ID             the location that receives the money
  *   SQUARE_ENV                     "sandbox" while testing, "production" to go live
