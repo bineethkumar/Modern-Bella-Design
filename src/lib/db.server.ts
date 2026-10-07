@@ -27,25 +27,51 @@ function sql(): postgres.Sql {
     // Supabase's transaction pooler does not support prepared statements.
     prepare: false,
     ssl: local ? false : "require",
-    max: 3,
-    idle_timeout: 20,
-    connect_timeout: 15,
+    // Serverless-friendly: Vercel freezes the function between requests, so
+    // keep one short-lived connection instead of a pool of long-lived ones
+    // that can go stale while frozen.
+    max: 1,
+    idle_timeout: 5,
+    max_lifetime: 60,
+    connect_timeout: 10,
+    // Skip the extra type-discovery round trip on every new connection.
+    fetch_types: false,
   });
   return client;
 }
 
 type Param = string | number | boolean | null;
 
+const QUERY_TIMEOUT_MS = 12_000;
+
+/** Drops the shared client so the next query opens a fresh connection. */
+function resetClient() {
+  const old = client;
+  client = null;
+  old?.end({ timeout: 1 }).catch(() => {});
+}
+
 /**
  * Database failures are logged in full on the server, but visitors only ever
- * see a generic message (the raw error can reveal hostnames or SQL).
+ * see a generic message (the raw error can reveal hostnames or SQL). Every
+ * query has a hard time limit, so a dead connection becomes an error instead
+ * of a request that never finishes.
  */
 async function guarded<T>(work: () => Promise<T>): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    return await work();
+    return await Promise.race([
+      work(),
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`Query timed out after ${QUERY_TIMEOUT_MS}ms`)), QUERY_TIMEOUT_MS);
+      }),
+    ]);
   } catch (error) {
     console.error("Database error:", error);
+    resetClient();
     throw new Error("Our system is temporarily unavailable. Please try again in a moment.");
+  } finally {
+    if (timer) clearTimeout(timer);
   }
 }
 
